@@ -7,13 +7,8 @@ V4.2.1版本正式发布，更新内容： [点击查看](https://mp.weixin.qq.c
 ---
 
 
-**写在前面的话：**
-
-这是一个业余时间写的基于IDEA的Code Review代码检视插件。当初开发的时候也仅是按照自己的习惯，写了这么个插件来辅助工作中的代码检视事务，没想到开源&上线IDEA插件应用市场之后会得到那么多小伙伴的青睐与支持，也收到了很多小伙伴反馈的功能建议，尤其是对团队协同场景的强烈呼声。
-
-经过多个版本迭代，本插件功能上进一步完善，支持自定义评审字段，满足不同团队的个性化诉求。同时，配套的服务端版本也完成开发发布上线，提供了团队中代码检视的一种更便捷的方式。
-
-![](https://pics.codingcoder.cn/pics/202307222357867.png)
+## 原项目开源地址
+https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 
 ---
 
@@ -201,13 +196,3 @@ IDEA中，点击File > Settings > Plugins 页面，点击 Install plugin from di
 ## 功版本变更记录
 
 本插件上线以来一直在不断更新，作者重视您提的任何建议与使用感受，也在不遗余力的利用业余空闲时间来不断的升级迭代。详细版本变更记录，您可以  [点此查看](https://blog.codingcoder.cn/post/codereviewversions.html)
-
-## 问题&建议
-
-使用过程中，如果发现有bug或者有功能建议，欢迎提issue单，或者通过公众号`是vzn呀`联系到作者，获取更为及时的支持。
-
-![](https://pics.codingcoder.cn/pics/202207091317876.png)
-
-当然，如果觉得本软件帮助到了您的工作，也欢迎支持我继续更新维护下去~
-
-![](https://pics.codingcoder.cn/pics/202307231540263.png)
