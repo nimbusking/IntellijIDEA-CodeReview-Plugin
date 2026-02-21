@@ -7,7 +7,6 @@ import com.veezean.idea.plugin.codereviewer.model.RecordColumns;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
 import com.veezean.idea.plugin.codereviewer.util.LanguageUtil;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
-import org.jetbrains.debugger.ObjectProperty;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

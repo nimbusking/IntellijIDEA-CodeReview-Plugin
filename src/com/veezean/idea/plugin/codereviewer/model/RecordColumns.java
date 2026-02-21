@@ -3,7 +3,10 @@ package com.veezean.idea.plugin.codereviewer.model;
 import com.veezean.idea.plugin.codereviewer.common.CodeReviewException;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**

@@ -4,7 +4,6 @@ import cn.hutool.core.thread.ThreadUtil;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.ui.TimerUtil;
 import com.veezean.idea.plugin.codereviewer.common.LanguageFileTypeFactory;
 import com.veezean.idea.plugin.codereviewer.mark.CodeCommentMarker;
 import com.veezean.idea.plugin.codereviewer.model.ReviewComment;
@@ -15,7 +14,9 @@ import org.apache.commons.lang.StringUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class ShowSnapshotUI extends JDialog {
     private JPanel contentPane;

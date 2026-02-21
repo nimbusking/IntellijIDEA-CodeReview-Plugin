@@ -10,7 +10,6 @@ import com.intellij.openapi.extensions.PluginId;
 import com.veezean.idea.plugin.codereviewer.model.GlobalConfigInfo;
 import com.veezean.idea.plugin.codereviewer.model.Response;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
-import com.veezean.idea.plugin.codereviewer.util.LanguageUtil;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
 
 import java.awt.*;

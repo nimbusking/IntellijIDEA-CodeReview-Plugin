@@ -5,10 +5,8 @@ import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
 import com.veezean.idea.plugin.codereviewer.util.LanguageUtil;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Optional;
 
 public class UsageShowDialogUI extends JDialog {
     private JPanel contentPane;

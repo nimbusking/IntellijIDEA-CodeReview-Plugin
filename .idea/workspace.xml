@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cbf23fc-5a3b-450b-b931-262f62457ebc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IntellijIDEA-CodeReview-Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IntellijIDEA-CodeReview-Plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddNewComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddNewComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddReviewCommentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddReviewCommentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/FieldConfigUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/FieldConfigUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ShowSnapshotUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ShowSnapshotUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/SnapshotEditorField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/SnapshotEditorField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/UsageShowDialogUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/UsageShowDialogUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/element/DateSelectCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/element/DateSelectCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/element/EditorTextFieldCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/element/EditorTextFieldCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/LanguageFileTypeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/LanguageFileTypeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/NetworkOperationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/NetworkOperationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/listener/FileOperateEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/listener/FileOperateEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/listener/ProjectActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/listener/ProjectActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/CodeReviewCommentCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/CodeReviewCommentCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/RecordColumns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/RecordColumns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/ReviewComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/ReviewComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/service/ProjectLevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/service/ProjectLevelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/CommonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/CommonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/LanguageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/LanguageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/Logger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +50,30 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/awt/GridBagLayout.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/javax/swing/JScrollPane.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://C:/ProgramFiles/ideaIC-2019.3.5.win/lib/platform-impl.jar!/com/intellij/openapi/application/TransactionGuardImpl.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://C:/ProgramFiles/ideaIC-2019.3.5.win/plugins/git4idea/lib/git4idea.jar!/git4idea/GitBranch.class" root0="SKIP_INSPECTION" />
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="branch_new_5.0" />
+                    <option name="lastUsedInstant" value="1771677966" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1771677965" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -45,9 +85,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
   <component name="ProjectId" id="2LBdRkQmMUVBz5dQWjeCcbAnCOq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,31 +94,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "233",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "192",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "branch__new__5.0",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kemi/dev/github/IntellijIDEA-CodeReview-Plugin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/plugins/git4idea/lib/git4idea.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\src\com\veezean\idea\plugin\codereviewer\model" />
@@ -96,16 +117,7 @@
       <recent name="com.veezean.idea.plugin.codereviewer.action.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CryptoUtil">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="IntellijIDEA-CodeReview-Plugin" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Plugin.Plugin">
     <configuration name="CryptoUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.veezean.idea.plugin.codereviewer.util.CryptoUtil" />
       <module name="IntellijIDEA-CodeReview-Plugin" />
@@ -167,6 +179,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LocalDirUtil" />
@@ -188,15 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -221,22 +234,21 @@
       <workItem from="1721050817462" duration="2769000" />
       <workItem from="1723809123736" duration="2808000" />
       <workItem from="1736061415470" duration="874000" />
-      <workItem from="1770205223927" duration="97000" />
-      <workItem from="1770208880883" duration="1000" />
-      <workItem from="1770263662587" duration="2049000" />
-      <workItem from="1770272249442" duration="1437000" />
+      <workItem from="1771677194020" duration="1088000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -245,5 +257,59 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="963" y="440" key="FileChooserDialogImpl" timestamp="1771677308896">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="963" y="440" key="FileChooserDialogImpl/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677308896" />
+    <state width="2517" height="397" key="GridCell.Tab.0.bottom" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.0.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.0.center" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.0.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.0.left" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.0.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.0.right" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.0.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.1.bottom" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.1.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.1.center" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.1.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.1.left" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.1.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state width="2517" height="397" key="GridCell.Tab.1.right" timestamp="1771677907759">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="2517" height="397" key="GridCell.Tab.1.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677907759" />
+    <state x="991" y="413" key="MultipleFileMergeDialog" timestamp="1771677965966">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="991" y="413" key="MultipleFileMergeDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677965966" />
+    <state x="761" y="274" key="SettingsEditor" timestamp="1771677984577">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="761" y="274" key="SettingsEditor/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677984577" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1771677208973">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677208973" />
+    <state x="983" y="412" key="git4idea.branch.GitSmartOperationDialog" timestamp="1771677958768">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="983" y="412" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677958768" />
   </component>
 </project>

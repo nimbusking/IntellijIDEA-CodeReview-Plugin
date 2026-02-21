@@ -3,7 +3,6 @@ package com.veezean.idea.plugin.codereviewer.service;
 import cn.hutool.cron.CronUtil;
 import cn.hutool.cron.task.Task;
 import com.intellij.openapi.project.Project;
-import com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentUI;
 import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
 

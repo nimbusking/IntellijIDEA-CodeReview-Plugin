@@ -2,7 +2,6 @@ package com.veezean.idea.plugin.codereviewer.model;
 
 import cn.hutool.core.io.file.FileNameUtil;
 import com.veezean.idea.plugin.codereviewer.common.CodeReviewException;
-import com.veezean.idea.plugin.codereviewer.common.CommitFlag;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.Serializable;

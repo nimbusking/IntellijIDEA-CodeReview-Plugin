@@ -1,13 +1,11 @@
 package com.veezean.idea.plugin.codereviewer.common;
 
 import com.intellij.ide.highlighter.HtmlFileType;
-import com.intellij.ide.highlighter.JShellFileType;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.ide.highlighter.XmlFileType;
 import com.intellij.json.JsonFileType;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
-import com.jetbrains.jsonSchema.JsonSchemaFileType;
 import org.apache.commons.lang.StringUtils;
 
 /**

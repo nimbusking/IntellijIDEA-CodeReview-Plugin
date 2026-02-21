@@ -1,9 +1,7 @@
 package com.veezean.idea.plugin.codereviewer.action.element;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.ComboBox;
 import com.veezean.idea.plugin.codereviewer.model.Column;
-import com.veezean.idea.plugin.codereviewer.model.ValuePair;
 
 import javax.swing.*;
 

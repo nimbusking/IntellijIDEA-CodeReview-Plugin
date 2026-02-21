@@ -4,15 +4,11 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileTypes.LanguageFileType;
-import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.project.Project;
-import com.intellij.spellchecker.ui.SpellCheckingEditorCustomization;
 import com.intellij.ui.EditorTextField;
 import com.intellij.ui.ErrorStripeEditorCustomization;
 import com.intellij.ui.HorizontalScrollBarEditorCustomization;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
-
-import java.awt.*;
 
 /**
  * 快照界面使用的定制化编辑器
