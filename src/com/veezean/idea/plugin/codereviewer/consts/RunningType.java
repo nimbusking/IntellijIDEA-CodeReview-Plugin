@@ -3,16 +3,18 @@ package com.veezean.idea.plugin.codereviewer.consts;
 import java.util.Arrays;
 
 /**
- * 版本类型
+ * 运行模式类型
  *
  * @author Veezean
+ * @author nimbusking
  * @since 2021/6/11
+ * @since 5.0 2026.02.21
  */
-public enum VersionType {
+public enum RunningType {
     LOCAL(0, "单机版本"),
     NETWORK(1, "网络版本（私有服务器）");
 
-    VersionType(int value, String desc) {
+    RunningType(int value, String desc) {
         this.value = value;
         this.desc = desc;
     }
@@ -28,7 +30,7 @@ public enum VersionType {
         return desc;
     }
 
-    public static VersionType getVersionType(int value) {
-        return Arrays.stream(values()).filter(versionType -> versionType.getValue() == value).findFirst().orElse(LOCAL);
+    public static RunningType getVersionType(int value) {
+        return Arrays.stream(values()).filter(runningType -> runningType.getValue() == value).findFirst().orElse(LOCAL);
     }
 }

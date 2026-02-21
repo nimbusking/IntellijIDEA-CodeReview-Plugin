@@ -1,6 +1,6 @@
 package com.veezean.idea.plugin.codereviewer.model;
 
-import com.veezean.idea.plugin.codereviewer.consts.VersionType;
+import com.veezean.idea.plugin.codereviewer.consts.RunningType;
 
 import java.io.Serializable;
 import java.util.List;
@@ -36,7 +36,7 @@ public class GlobalConfigInfo implements Serializable {
     }
 
     public boolean isNetworkMode() {
-        return VersionType.NETWORK.getValue() == versionType;
+        return RunningType.NETWORK.getValue() == versionType;
     }
 
     public void setVersionType(int versionType) {

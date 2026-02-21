@@ -10,13 +10,12 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 /**
- * 系统配置管理
+ * 系统全局配置管理
  *
  * @author Veezean
  * @since 2021/4/26
  */
 public final class GlobalConfigManager {
-    private static volatile GlobalConfigManager instance;
     private GlobalConfigInfo globalConfigInfo;
 
     /**
@@ -35,15 +34,19 @@ public final class GlobalConfigManager {
     }
 
     /**
+     * 优化单例，改为静态内部类
+     */
+    private static class ManagerHolder {
+        static final GlobalConfigManager instance = new GlobalConfigManager();
+    }
+
+    /**
      * 获取单例对象
      *
      * @return instance
      */
-    public static synchronized GlobalConfigManager getInstance() {
-        if (instance == null) {
-            instance = new GlobalConfigManager();
-        }
-        return instance;
+    public static GlobalConfigManager getInstance() {
+        return ManagerHolder.instance;
     }
 
     /**
@@ -65,7 +68,6 @@ public final class GlobalConfigManager {
 
     /**
      * 保存配置数据
-     *
      */
     public synchronized void saveGlobalConfig() {
         SerializeUtils.serialize(globalConfigInfo, ".idea_CodeReviewHelper_config", "global_config.dat");

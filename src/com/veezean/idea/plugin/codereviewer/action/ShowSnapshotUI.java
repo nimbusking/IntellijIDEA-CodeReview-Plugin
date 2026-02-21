@@ -111,7 +111,7 @@ public class ShowSnapshotUI extends JDialog {
 
     private void refreshShowLanguages() {
         this.fileLabel.setText(LanguageUtil.getString("SNAPSHOT_FILE_INFO"));
-        this.snapshotTimeLabel.setText(LanguageUtil.getString("SNAPSHOT_TIIME"));
+        this.snapshotTimeLabel.setText(LanguageUtil.getString("SNAPSHOT_TIME"));
     }
 
     public static void showSnapshotUI(JComponent mainWindow, Project project, ReviewComment commentInfoModel) {

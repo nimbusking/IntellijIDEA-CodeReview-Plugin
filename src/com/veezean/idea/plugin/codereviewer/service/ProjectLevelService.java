@@ -16,7 +16,7 @@ import java.util.List;
  * @author Veezean
  * @since 2023/3/18
  */
-public class ProjectLevelService{
+public class ProjectLevelService {
 
     private InnerProjectCache projectCache;
 

@@ -11,7 +11,7 @@ import com.veezean.idea.plugin.codereviewer.common.CodeReviewException;
 import com.veezean.idea.plugin.codereviewer.common.GlobalConfigManager;
 import com.veezean.idea.plugin.codereviewer.common.NetworkOperationHelper;
 import com.veezean.idea.plugin.codereviewer.consts.LanguageType;
-import com.veezean.idea.plugin.codereviewer.consts.VersionType;
+import com.veezean.idea.plugin.codereviewer.consts.RunningType;
 import com.veezean.idea.plugin.codereviewer.model.*;
 import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
@@ -119,12 +119,12 @@ public class NetworkConfigUI extends JDialog {
 
             GlobalConfigInfo newConfigInfo = GlobalConfigManager.getInstance().getGlobalConfig();
             newConfigInfo.setLanguage(getLanguageType().getValue());
-            newConfigInfo.setVersionType(getVersionType().getValue());
+            newConfigInfo.setVersionType(getRunningType().getValue());
             // 保存划线标记开关设置
             newConfigInfo.setCloseLineMark(isLineMarkClosed());
 
             try {
-                if (VersionType.NETWORK.getValue() == getVersionType().getValue()) {
+                if (RunningType.NETWORK.getValue() == getRunningType().getValue()) {
                     if (this.currentUserInfo == null) {
                         throw new CodeReviewException("网络版本请先检测账号密码是否正确");
                     }
@@ -204,9 +204,9 @@ public class NetworkConfigUI extends JDialog {
             }).start();
         });
         // 切换到本地版本
-        localVersionRadioButton.addActionListener(e -> switchVersionType(VersionType.LOCAL));
+        localVersionRadioButton.addActionListener(e -> switchVersionType(RunningType.LOCAL));
         // 切换到网络版本
-        netVersionRadioButton.addActionListener(e -> switchVersionType(VersionType.NETWORK));
+        netVersionRadioButton.addActionListener(e -> switchVersionType(RunningType.NETWORK));
 
         // 开启划线标记开关
         lineMarkOpenRadio.addActionListener(e -> switchLineMarkerEvent(false));
@@ -325,8 +325,8 @@ public class NetworkConfigUI extends JDialog {
         }
 
         // 触发版本类型切换动作
-        VersionType versionType = getVersionType();
-        switchVersionType(versionType);
+        RunningType runningType = getRunningType();
+        switchVersionType(runningType);
 
         englishRadioButton.addActionListener(e -> {
             changeLanguageEvent(LanguageType.ENGLISH);
@@ -360,8 +360,8 @@ public class NetworkConfigUI extends JDialog {
         clickServerCheckLabel.setVisible(!enable);
     }
 
-    private void switchVersionType(VersionType versionType) {
-        switch (versionType) {
+    private void switchVersionType(RunningType runningType) {
+        switch (runningType) {
             case NETWORK:
                 netVersionRadioButton.setSelected(true);
                 localVersionRadioButton.setSelected(false);
@@ -468,17 +468,17 @@ public class NetworkConfigUI extends JDialog {
         return lineMarkCloseRadio.isSelected();
     }
 
-    private VersionType getVersionType() {
+    private RunningType getRunningType() {
         if (localVersionRadioButton.isSelected()) {
-            return VersionType.LOCAL;
+            return RunningType.LOCAL;
         }
 
         if (netVersionRadioButton.isSelected()) {
-            return VersionType.NETWORK;
+            return RunningType.NETWORK;
         }
 
         // 其他情况，默认local版本
-        return VersionType.LOCAL;
+        return RunningType.LOCAL;
     }
 
     public static void showDialog(JComponent mainWindow) {
