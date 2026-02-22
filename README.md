@@ -10,6 +10,12 @@ V4.2.1版本正式发布，更新内容： [点击查看](https://mp.weixin.qq.c
 ## 原项目开源地址
 https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 
+## 5.0 What's New
+- Review 4.x项目代码，优化&重构
+- 【新增】调整原有手动同步逻辑为自动同步逻辑
+- 【新增】补充二开和配置相关文档
+- 【优化】去除原有配置成功通过MsgBox弹框的消息提醒，改为IDEA内置消息提醒
+
 ---
 
 ## 一种更简单高效的代码review体验
