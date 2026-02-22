@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -47,6 +48,8 @@ public class Logger {
 
             // 日志文件输出
             FileHandler fileHandler = new FileHandler(logFile.getAbsolutePath(), true);
+            // fix set default charset encoding
+            fileHandler.setEncoding(StandardCharsets.UTF_8.toString());
             fileHandler.setFormatter(new LogFormatter());
             logger.addHandler(fileHandler);
         } catch (IOException e) {
