@@ -6,7 +6,7 @@ import com.intellij.openapi.util.IconLoader;
 import javax.swing.*;
 
 /**
- * <类功能简要描述>
+ * Icon工具类
  *
  * @author Veezean
  * @since 2024/5/11

@@ -15,6 +15,7 @@ https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 - 【新增】调整原有手动同步逻辑为自动同步逻辑
 - 【新增】补充二开和配置相关文档
 - 【优化】去除原有配置成功通过MsgBox弹框的消息提醒，改为IDEA内置消息提醒
+- 【修复】CodeInsight功能涉及到的本地未提交数据行数标记问题
 
 ---
 

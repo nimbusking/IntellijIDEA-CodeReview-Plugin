@@ -21,11 +21,11 @@ public class ManageReviewCommentsFactory implements ToolWindowFactory {
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
 
         ManageReviewCommentUI managerUI = new ManageReviewCommentUI(project);
-                ProjectLevelService.getService(project).getProjectCache().setManageReviewCommentUI(managerUI);
+        ProjectLevelService.getService(project).getProjectCache().setManageReviewCommentUI(managerUI);
         managerUI.initUI();
 
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-        Content content = contentFactory.createContent(managerUI.fullPanel,"", false);
+        Content content = contentFactory.createContent(managerUI.fullPanel, "", false);
         toolWindow.getContentManager().addContent(content);
         toolWindow.setIcon(IconCollections.toolWindowIcon);
 
