@@ -19,4 +19,15 @@ public class Constants {
 
     public static final Key<Object> HIGHTLIGHT_MARKER = Key.create(CODE_REVIEW_HELPER_MARKER);
 
+    public static final String BASE_PACKAGE = "com.veezean";
+
+    /**
+     * 有改动且未提交
+     */
+    public static final int UNCOMMITED = 1;
+    /**
+     * 本地无改动
+     */
+    public static final int NOT_CHANGED = 0;
+
 }

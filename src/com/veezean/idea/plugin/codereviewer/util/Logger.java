@@ -2,6 +2,8 @@ package com.veezean.idea.plugin.codereviewer.util;
 
 import cn.hutool.core.io.FileUtil;
 import com.veezean.idea.plugin.codereviewer.common.LocalDirUtil;
+import com.veezean.idea.plugin.codereviewer.consts.Constants;
+import com.veezean.idea.plugin.codereviewer.consts.FileConstants;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,9 +30,13 @@ import java.util.logging.LogRecord;
 public class Logger {
 
     private static volatile java.util.logging.Logger logger;
+    private static final String LOGGER_NAME = "CodeReviewHelperPlugin";
+    private static final long DAY_30 = 1000L * 60 * 60 * 24;
+    private static final String LOG_TIME_FORMAT_TYPE = "yyyy-MM-dd HH:mm:ss.SSS";
+    private static final String LOG_FILE_DATE_FORMAT = "yyyyMMdd";
 
     static {
-        logger = java.util.logging.Logger.getLogger("CodeReviewHelperPlugin");
+        logger = java.util.logging.Logger.getLogger(LOGGER_NAME);
         logger.setLevel(Level.INFO);
         initLoggerDir();
     }
@@ -40,11 +46,11 @@ public class Logger {
             File logDir = getLogDir();
 
             // 清空30天前的日志文件
-            FileUtil.loopFiles(logDir, file -> System.currentTimeMillis() - file.lastModified() > 1000L * 60 * 60 * 24)
+            FileUtil.loopFiles(logDir, file -> System.currentTimeMillis() - file.lastModified() > DAY_30)
                     .forEach(File::deleteOnExit);
             File logFile = new File(logDir,
-                    "CodeReviewHelperPlugin_" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")) +
-                            ".log");
+                    FileConstants.LOG_FILE_NAME_PREFIX + LocalDate.now().format(DateTimeFormatter.ofPattern(LOG_FILE_DATE_FORMAT)) +
+                            FileConstants.LOG_FILE_SUFFIX);
 
             // 日志文件输出
             FileHandler fileHandler = new FileHandler(logFile.getAbsolutePath(), true);
@@ -62,7 +68,7 @@ public class Logger {
     }
 
     public static File getLogDir() {
-        File logDir = new File(LocalDirUtil.getBaseDir(), ".idea_CodeReviewHelper_logs");
+        File logDir = new File(LocalDirUtil.getBaseDir(), FileConstants.LOG_HOME_NAME);
         if (!logDir.exists() || !logDir.isDirectory()) {
             logDir.mkdirs();
         }
@@ -87,7 +93,7 @@ public class Logger {
             StringBuilder builder = new StringBuilder();
             builder.append(LocalDateTime.ofInstant(Instant.ofEpochMilli(record.getMillis()),
                     ZoneId.systemDefault())
-                    .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")))
+                    .format(DateTimeFormatter.ofPattern(LOG_TIME_FORMAT_TYPE)))
                     .append(" | ")
                     .append(record.getLevel().getName())
                     .append(" | ");
@@ -95,7 +101,7 @@ public class Logger {
             // 尝试获取日志打印位置的类名、方法名、代码行号
             try {
                 Arrays.stream(Thread.currentThread().getStackTrace())
-                        .filter(stackTraceElement -> stackTraceElement.getClassName().startsWith("com.veezean"))
+                        .filter(stackTraceElement -> stackTraceElement.getClassName().startsWith(Constants.BASE_PACKAGE))
                         .filter(stackTraceElement -> !stackTraceElement.getClassName().startsWith(Logger.class.getName()))
                         .findFirst()
                         .ifPresent(stackTraceElement -> {

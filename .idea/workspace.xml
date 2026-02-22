@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cbf23fc-5a3b-450b-b931-262f62457ebc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/consts/FileConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/language_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language_en.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/language_zh.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/language_zh.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/NetworkConfigUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/NetworkConfigUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ShowSnapshotUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ShowSnapshotUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddNewComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddNewComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddReviewCommentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/AddReviewCommentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/FieldConfigUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/FieldConfigUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ManageReviewCommentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ReviewCommentDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/action/ReviewCommentDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/CommitFlag.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/GlobalConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/GlobalConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/consts/VersionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/consts/RunningType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/GlobalConfigInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/model/GlobalConfigInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/service/ProjectLevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/service/ProjectLevelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/InnerProjectCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/common/InnerProjectCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/consts/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/consts/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/LanguageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/LanguageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/veezean/idea/plugin/codereviewer/util/Logger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +95,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -220,7 +228,8 @@
       <workItem from="1721050817462" duration="2769000" />
       <workItem from="1723809123736" duration="2808000" />
       <workItem from="1736061415470" duration="874000" />
-      <workItem from="1771677194020" duration="5035000" />
+      <workItem from="1771677194020" duration="5235000" />
+      <workItem from="1771723005979" duration="10438000" />
     </task>
     <task id="LOCAL-00001" summary="一轮重构，修改冗余import">
       <created>1771678315690</created>
@@ -229,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1771678315690</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改部分变量命名错误&#10;修改类型名称&#10;重构全局配置的单例实现">
+      <created>1771683226359</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771683226359</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修复日志组件FileHandler没有设置编码导致的日志乱码问题">
+      <created>1771725272996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771725272996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,72 +274,86 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="一轮重构，修改冗余import" />
-    <option name="LAST_COMMIT_MESSAGE" value="一轮重构，修改冗余import" />
+    <MESSAGE value="修改部分变量命名错误&#10;修改类型名称&#10;重构全局配置的单例实现" />
+    <MESSAGE value="修复日志组件FileHandler没有设置编码导致的日志乱码问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复日志组件FileHandler没有设置编码导致的日志乱码问题" />
   </component>
   <component name="WindowStateProjectService">
     <state x="763" y="36" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1771680483533">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="763" y="36" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680483533" />
-    <state x="808" y="294" key="CommitChangelistDialog2" timestamp="1771678315127">
+    <state x="1128" y="281" key="CommitChangelistDialog2" timestamp="1771725272469">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="808" y="294" key="CommitChangelistDialog2/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771678315127" />
+    <state x="1128" y="281" key="CommitChangelistDialog2/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771725272469" />
     <state x="963" y="440" key="FileChooserDialogImpl" timestamp="1771677308896">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="963" y="440" key="FileChooserDialogImpl/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677308896" />
-    <state width="2517" height="397" key="GridCell.Tab.0.bottom" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.0.bottom" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.0.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.0.center" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.0.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.0.center" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.0.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.0.left" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.0.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.0.left" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.0.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.0.right" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.0.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.0.right" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.0.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.1.bottom" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.0.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.1.bottom" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.1.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.1.center" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.1.bottom/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.1.center" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.1.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.1.left" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.1.center/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.1.left" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.1.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
-    <state width="2517" height="397" key="GridCell.Tab.1.right" timestamp="1771680021301">
+    <state width="2517" height="397" key="GridCell.Tab.1.left/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
+    <state width="2517" height="397" key="GridCell.Tab.1.right" timestamp="1771735405922">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state width="2517" height="397" key="GridCell.Tab.1.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771680021301" />
+    <state width="2517" height="397" key="GridCell.Tab.1.right/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735405922" />
     <state x="991" y="413" key="MultipleFileMergeDialog" timestamp="1771677965966">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="991" y="413" key="MultipleFileMergeDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677965966" />
-    <state x="761" y="274" key="SettingsEditor" timestamp="1771679517863">
+    <state x="761" y="274" key="SettingsEditor" timestamp="1771726860904">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="761" y="274" key="SettingsEditor/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771679517863" />
-    <state x="873" y="433" key="Vcs.Push.Dialog.v2" timestamp="1771678329173">
+    <state x="761" y="274" key="SettingsEditor/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771726860904" />
+    <state x="873" y="433" key="Vcs.Push.Dialog.v2" timestamp="1771683235928">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="873" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771678329173" />
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1771677208973">
+    <state x="873" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771683235928" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1771723006700">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677208973" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771723006700" />
+    <state x="1011" y="467" key="extract.method.dialog" timestamp="1771735298178">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1011" y="467" key="extract.method.dialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771735298178" />
+    <state x="905" y="285" width="750" height="822" key="find.popup" timestamp="1771724993780">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="905" y="285" width="750" height="822" key="find.popup/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771724993780" />
     <state x="983" y="412" key="git4idea.branch.GitSmartOperationDialog" timestamp="1771677958768">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="983" y="412" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771677958768" />
+    <state x="937" y="350" width="670" height="676" key="search.everywhere.popup" timestamp="1771723358668">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="937" y="350" width="670" height="676" key="search.everywhere.popup/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1771723358668" />
   </component>
 </project>

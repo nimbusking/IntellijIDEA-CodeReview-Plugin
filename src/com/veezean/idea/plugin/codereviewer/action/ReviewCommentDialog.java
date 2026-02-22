@@ -19,8 +19,8 @@ import java.util.Optional;
  */
 public class ReviewCommentDialog {
 
-    private static final int WIDTH = 900;
-    private static final int HEIGHT = 800;
+    private static final int DEFAULT_WIDTH = 900;
+    private static final int DEFAULT_HEIGHT = 800;
 
     public static void show(ReviewComment model, Project project, int operateType) {
         JDialog dialog = new JDialog();
@@ -45,7 +45,7 @@ public class ReviewCommentDialog {
                 .map(JComponent::getRootPane)
                 .orElse(null);
 
-        dialog.setLocation(CommonUtil.getWindowRelativePoint(rootPane, WIDTH, HEIGHT));
+        dialog.setLocation(CommonUtil.getWindowRelativePoint(rootPane, DEFAULT_WIDTH, DEFAULT_HEIGHT));
         dialog.setModal(true);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.pack();

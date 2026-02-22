@@ -1,10 +1,10 @@
 <idea-plugin>
-  <id>com.veezean.idea.plugin.codereviewer</id>
-  <name>Code Review Helper</name>
-  <version>4.2.2</version>
-  <vendor email="veezean@hotmail.com" url="https://github.com/veezean/IntellijIDEA-CodeReview-Plugin">Veezean</vendor>
+    <id>com.veezean.idea.plugin.codereviewer</id>
+    <name>Code Review Helper</name>
+    <version>4.2.2</version>
+    <vendor email="veezean@hotmail.com" url="https://github.com/veezean/IntellijIDEA-CodeReview-Plugin">Veezean</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
     A simple and easy-to-use code review tool on the idea-platform<br>
     Main functions: <br>
         1. You can mark the review opinions in the code and export them to excel table; Or import other people's review opinions into idea, and support double-click to jump to the marked code<br>
@@ -20,7 +20,7 @@
           4、 支持配置化修改对应评审字段的内容，更适合自己与团队的实际诉求。<br>
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
 
       English:<br>
       2025-01-05: V4.2.2 support idea v2024.3+ <br>
@@ -70,57 +70,57 @@
       2019-10-08: V1.1 功能优化，支持同时打开多个IDEA窗口的情况下，相互之间review内容独立<br>
       2019-10-04: V1.0 首个版本，提供代码标记、本地窗口查看，导出Excel、导入Excel等基本功能<br>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="193"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="193"/>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
 
-    <!-- 注册代码检视工具的 Tool Window -->
-    <toolWindow id="CodeReview"
-                anchor="bottom"
-                factoryClass="com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentsFactory"/>
+        <!-- 注册代码检视工具的 Tool Window -->
+        <toolWindow id="CodeReview"
+                    anchor="bottom"
+                    factoryClass="com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentsFactory"/>
 
-    <codeInsight.lineMarkerProvider
-            language=""
-            implementationClass="com.veezean.idea.plugin.codereviewer.action.LeftMarkIconProvider"/>
+        <codeInsight.lineMarkerProvider
+                language=""
+                implementationClass="com.veezean.idea.plugin.codereviewer.action.LeftMarkIconProvider"/>
 
-    <!-- 注册 application-level service -->
-<!--    <applicationService-->
-<!--            serviceInterface="com.veezean.idea.plugin.codereviewer.action.service.IApplicationLevelService"-->
-<!--            serviceImplementation="com.veezean.idea.plugin.codereviewer.action.service.IdeaApplicationLevelExtService"/>-->
+        <!-- 注册 application-level service -->
+        <!--    <applicationService-->
+        <!--            serviceInterface="com.veezean.idea.plugin.codereviewer.action.service.IApplicationLevelService"-->
+        <!--            serviceImplementation="com.veezean.idea.plugin.codereviewer.action.service.IdeaApplicationLevelExtService"/>-->
 
-    <!-- 注册 project-level service -->
-    <projectService
-            serviceImplementation="com.veezean.idea.plugin.codereviewer.service.ProjectLevelService"/>
+        <!-- 注册 project-level service -->
+        <projectService
+                serviceImplementation="com.veezean.idea.plugin.codereviewer.service.ProjectLevelService"/>
 
 
-  </extensions>
+    </extensions>
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="AddNewComment" class="com.veezean.idea.plugin.codereviewer.action.AddNewComment"
-            text="Add Review Comment"
-            icon="AllIcons.Toolwindows.ToolWindowCommander"
-            description="Add Review Comment">
-      <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
-      <add-to-group group-id="EditorPopupMenu" anchor="first" />
-    </action>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="AddNewComment" class="com.veezean.idea.plugin.codereviewer.action.AddNewComment"
+                text="Add Review Comment"
+                icon="AllIcons.Toolwindows.ToolWindowCommander"
+                description="Add review comment">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
 
-  <applicationListeners>
-    <listener class="com.veezean.idea.plugin.codereviewer.listener.ProjectActionListener"
-              topic="com.intellij.openapi.project.ProjectManagerListener"/>
-  </applicationListeners>
-  <projectListeners>
-    <listener class="com.veezean.idea.plugin.codereviewer.listener.FileOperateEventListener"
-              topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
-  </projectListeners>
+    <applicationListeners>
+        <listener class="com.veezean.idea.plugin.codereviewer.listener.ProjectActionListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
+    <projectListeners>
+        <listener class="com.veezean.idea.plugin.codereviewer.listener.FileOperateEventListener"
+                  topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
+    </projectListeners>
 
-  <depends>com.intellij.modules.java</depends>
-  <depends>com.intellij.modules.json</depends>
-  <depends>Git4Idea</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.json</depends>
+    <depends>Git4Idea</depends>
 
 </idea-plugin>

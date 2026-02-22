@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentUI;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
+import com.veezean.idea.plugin.codereviewer.consts.FileConstants;
 import com.veezean.idea.plugin.codereviewer.consts.InputTypeDefine;
 import com.veezean.idea.plugin.codereviewer.model.CodeReviewCommentCache;
 import com.veezean.idea.plugin.codereviewer.model.Column;
@@ -203,7 +204,7 @@ public class InnerProjectCache {
                 }
 
                 // 存储前，标记该条记录已经被修改过
-                existComment.setCommitFlag(CommitFlag.UNCOMMITED);
+                existComment.setCommitFlag(Constants.UNCOMMITED);
                 serialize(cacheData, this.project);
                 Logger.info("column value changed, save finished. columnCode:" + targetColumnDefine.getColumnCode());
                 return true;
@@ -214,7 +215,7 @@ public class InnerProjectCache {
                 existComment.setStringPropValue(targetColumnDefine.getColumnCode(), (String) columnValue);
 
                 // 存储前，标记该条记录已经被修改过
-                existComment.setCommitFlag(CommitFlag.UNCOMMITED);
+                existComment.setCommitFlag(Constants.UNCOMMITED);
                 serialize(cacheData, this.project);
                 Logger.info("column value changed, save finished. columnCode:" + targetColumnDefine.getColumnCode());
                 return true;
@@ -293,7 +294,7 @@ public class InnerProjectCache {
      * @param project 当前项目
      */
     synchronized static void serialize(CodeReviewCommentCache cache, Project project) {
-        SerializeUtils.serialize(cache, ".idea_CodeReviewHelper_data", project.getLocationHash() + "_comment.dat");
+        SerializeUtils.serialize(cache, FileConstants.CODE_REVIEW_DATA_HOME_NAME, project.getLocationHash() + FileConstants.CODE_REVIEW_DATA_FILE_SUFFIX);
     }
 
     /**
@@ -303,6 +304,6 @@ public class InnerProjectCache {
      * @return 反序列化后的评审数据
      */
     synchronized static CodeReviewCommentCache deserialize(Project project) {
-        return SerializeUtils.deserialize(".idea_CodeReviewHelper_data", project.getLocationHash() + "_comment.dat");
+        return SerializeUtils.deserialize(FileConstants.CODE_REVIEW_DATA_HOME_NAME, project.getLocationHash() + FileConstants.CODE_REVIEW_DATA_FILE_SUFFIX);
     }
 }

@@ -114,7 +114,7 @@ public class FieldConfigUI extends JDialog {
 
     private void refreshShowLanguages() {
         titleLabel.setText(LanguageUtil.getString("FIELD_UI_TITLE"));
-        detailDocLabel.setText(LanguageUtil.getString("FIELD_UI_HELPDOC_LABEL"));
+        detailDocLabel.setText(LanguageUtil.getString("FIELD_UI_HELP_DOC_LABEL"));
         showHelpBtn.setText(LanguageUtil.getString("CONFIG_UI_CLICK_HERE_TO_SHOW"));
         shortHelpArea.setText(LanguageUtil.getString("FIELD_UI_SHORT_INFO"));
         restoreToDefault.setText(LanguageUtil.getString("FIELD_RESET_TO_DEFAULT"));

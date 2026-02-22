@@ -2,6 +2,7 @@ package com.veezean.idea.plugin.codereviewer.common;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.json.JSONUtil;
+import com.veezean.idea.plugin.codereviewer.consts.FileConstants;
 import com.veezean.idea.plugin.codereviewer.model.GlobalConfigInfo;
 import com.veezean.idea.plugin.codereviewer.model.RecordColumns;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
@@ -70,7 +71,7 @@ public final class GlobalConfigManager {
      * 保存配置数据
      */
     public synchronized void saveGlobalConfig() {
-        SerializeUtils.serialize(globalConfigInfo, ".idea_CodeReviewHelper_config", "global_config.dat");
+        SerializeUtils.serialize(globalConfigInfo, FileConstants.CONFIG_HOME_NAME, FileConstants.CONFIG_FILE_NAME);
     }
 
     /**
@@ -78,7 +79,7 @@ public final class GlobalConfigManager {
      */
     private synchronized void reloadCachedConfig() {
         Logger.info("开始重新加载配置数据操作...");
-        this.globalConfigInfo = SerializeUtils.deserialize(".idea_CodeReviewHelper_config", "global_config.dat");
+        this.globalConfigInfo = SerializeUtils.deserialize(FileConstants.CONFIG_HOME_NAME, FileConstants.CONFIG_FILE_NAME);
     }
 
     public synchronized void resetColumnCaches() {
@@ -118,27 +119,28 @@ public final class GlobalConfigManager {
      * @param recordColumns
      */
     public synchronized void saveCustomConfigColumn(RecordColumns recordColumns) {
-        SerializeUtils.saveConfigAsJson(recordColumns, ".idea_CodeReviewHelper_config", getCustomConfigFileName());
+        SerializeUtils.saveConfigAsJson(recordColumns, FileConstants.CONFIG_HOME_NAME, getCustomConfigFileName());
         this.userCustomColumns = recordColumns;
     }
 
     private synchronized void loadCustomConfigColumn() {
         this.userCustomColumns = SerializeUtils.readConfigAsJson(RecordColumns.class,
-                ".idea_CodeReviewHelper_config", getCustomConfigFileName());
+                FileConstants.CONFIG_HOME_NAME, getCustomConfigFileName());
     }
 
     private String getCustomConfigFileName() {
         if (globalConfigInfo == null || !globalConfigInfo.isNetworkMode()) {
             Logger.info("当前本地模式，尝试加载本地个人定制化配置");
-            return "user_custom_columns.json";
+            return FileConstants.CUSTOM_CONFIG_FILE_NAME_LOCAL;
         }
         Logger.info("当前网络模式，尝试加载服务端定制化配置");
-        return "server_user_custom_columns.json";
+        return FileConstants.CUSTOM_CONFIG_FILE_NAME_SERVER;
     }
 
     private synchronized void loadSystemColumnDefine() {
         if (systemDefaultRecordColumns == null) {
-            URL resource = GlobalConfigManager.class.getClassLoader().getResource("SystemColumns.json");
+            URL resource = GlobalConfigManager.class.getClassLoader().getResource(FileConstants.INIT_SYSTEM_COLUMNS_FILE_NAME);
+            assert resource != null;
             String json = FileUtil.readString(resource, StandardCharsets.UTF_8.name());
             systemDefaultRecordColumns = JSONUtil.toBean(json, RecordColumns.class);
         }

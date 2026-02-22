@@ -33,19 +33,22 @@ import java.util.stream.Collectors;
  *
  * @author Veezean
  * @date 2021/4/25
+ * @since 5.0 补充注释
  */
 public class AddNewComment extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
 
-        //获取当前操作的类文件
+        // 获取当前操作的类文件
         PsiFile psiFile = e.getData(CommonDataKeys.PSI_FILE);
-        //获取当前类文件的路径
+        // 获取当前类文件的路径
+        assert psiFile != null;
         String classPath = CommonUtil.getFileFullName(psiFile);
 
         Editor data = e.getData(CommonDataKeys.EDITOR);
 
+        assert data != null;
         SelectionModel selectionModel = data.getSelectionModel();
         // 获取当前选择的内容
         String selectedText = selectionModel.getSelectedText();
@@ -57,7 +60,6 @@ public class AddNewComment extends AnAction {
 
         ReviewComment model = new ReviewComment();
 
-//        Project project = e.getProject();
         ProjectLevelService projectLevelService =
                 ProjectLevelService.getService(Objects.requireNonNull(e.getProject()));
         InnerProjectCache projectCache = projectLevelService.getProjectCache();
@@ -140,7 +142,7 @@ public class AddNewComment extends AnAction {
             Logger.error("获取git相关信息失败", ex);
         }
 
-        //显示对话框
+        // 显示对话框
         ReviewCommentDialog.show(model, e.getProject(), Constants.ADD_COMMENT);
 
         Logger.info("新增评审意见操作窗口已经弹出");

@@ -15,7 +15,6 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.search.PsiShortNamesCache;
 import com.veezean.idea.plugin.codereviewer.action.element.DateSelectCreator;
-import com.veezean.idea.plugin.codereviewer.common.CommitFlag;
 import com.veezean.idea.plugin.codereviewer.common.GlobalConfigManager;
 import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.common.NetworkOperationHelper;
@@ -61,7 +60,7 @@ public class ManageReviewCommentUI {
     private JButton updateFromServerButton;
     private JButton commitToServerButton;
     private JComboBox<ServerProjectShortInfo> selectProjectComboBox;
-    private JComboBox updateFilterTypecomboBox;
+    private JComboBox updateFilterTypeComboBox;
     private JPanel networkButtonGroupPanel;
     //    private JLabel versionNotes;
     private JButton syncServerCfgDataButton;
@@ -357,6 +356,7 @@ public class ManageReviewCommentUI {
     private void bindButtons() {
         GlobalConfigInfo globalConfig = GlobalConfigManager.getInstance().getGlobalConfig();
 
+        // 清空按钮
         buttonSettings(clearButton, IconCollections.clear, LanguageUtil.getString(
                 "MAIN_CLEAR_ALL_BUTTON"));
         clearButton.addActionListener(e -> {
@@ -374,6 +374,7 @@ public class ManageReviewCommentUI {
             reloadTableData();
         });
 
+        // 导入按钮
         buttonSettings(importButton, IconCollections.importFile, LanguageUtil.getString(
                 "MAIN_IMPORT_BUTTON"));
         importButton.addActionListener(e -> {
@@ -406,6 +407,7 @@ public class ManageReviewCommentUI {
             }
         });
 
+        // 导出按钮
         buttonSettings(exportButton, IconCollections.exportFile, LanguageUtil.getString(
                 "MAIN_EXPORT_BUTTON"));
         exportButton.addActionListener(e -> {
@@ -441,6 +443,7 @@ public class ManageReviewCommentUI {
             }
         });
 
+        // 删除按钮
         buttonSettings(deleteButton, IconCollections.delete, LanguageUtil.getString(
                 "MAIN_DELETE_SELECTED_BUTTON"));
         deleteButton.addActionListener(e -> {
@@ -452,14 +455,14 @@ public class ManageReviewCommentUI {
                 return;
             }
 
-            List<String> deleteIndentifierList = new ArrayList<>();
+            List<String> deleteIdentifierList = new ArrayList<>();
             int[] selectedRows = commentTable.getSelectedRows();
             if (selectedRows != null && selectedRows.length > 0) {
                 for (int rowId : selectedRows) {
                     String valueAt = (String) commentTable.getValueAt(rowId, 0);
-                    deleteIndentifierList.add(valueAt);
+                    deleteIdentifierList.add(valueAt);
                 }
-                ProjectLevelService.getService(ManageReviewCommentUI.this.project).getProjectCache().deleteComments(deleteIndentifierList);
+                ProjectLevelService.getService(ManageReviewCommentUI.this.project).getProjectCache().deleteComments(deleteIdentifierList);
             }
 
             reloadTableData();
@@ -475,12 +478,15 @@ public class ManageReviewCommentUI {
                 "MAIN_USAGE_DOC"), new Dimension(60, 48));
         helpButton.addActionListener(e -> UsageShowDialogUI.showUsageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane()));
 
+        // 服务端访问
         buttonSettings(openServerPageButton, IconCollections.server_open_web, LanguageUtil.getString(
                 "MAIN_OPEN_SERVER_WEB_BUTTON"));
         openServerPageButton.addActionListener(e -> {
             String serverAddress = GlobalConfigManager.getInstance().getGlobalConfig().getServerAddress();
             NetworkOperationHelper.openBrowser(serverAddress);
         });
+
+        // 同步配置
         buttonSettings(syncServerCfgDataButton, IconCollections.server_config_sync, LanguageUtil.getString(
                 "MAIN_SYNC_CONFIG_BUTTON"));
         syncServerCfgDataButton.addActionListener(e -> {
@@ -575,7 +581,7 @@ public class ManageReviewCommentUI {
                                                 && !commitResult.getFailedIds().contains(reviewComment.getId()))
                                         .forEach(reviewComment -> {
                                             // 提交成功的记录，更新状态为已提交
-                                            reviewComment.setCommitFlag(CommitFlag.NOT_CHANGED);
+                                            reviewComment.setCommitFlag(Constants.NOT_CHANGED);
                                         });
 
                                 Map<String, Long> versionMap = commitResult.getVersionMap();
@@ -636,7 +642,7 @@ public class ManageReviewCommentUI {
                 return;
             }
 
-            String selectedType = (String) updateFilterTypecomboBox.getSelectedItem();
+            String selectedType = (String) updateFilterTypeComboBox.getSelectedItem();
 
             int resp = JOptionPane.showConfirmDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
                     MessageFormat.format(LanguageUtil.getString("ALERT_CONFIRM_BEFORE_PULL_COMMENT"), selectedType),
@@ -731,7 +737,7 @@ public class ManageReviewCommentUI {
                             reviewComment.setDataVersion(comment.getDataVersion());
                             reviewComment.setPropValues(comment.getValues());
                             reviewComment.setLineRangeInfo();
-                            reviewComment.setCommitFlag(CommitFlag.NOT_CHANGED);
+                            reviewComment.setCommitFlag(Constants.NOT_CHANGED);
                             return reviewComment;
                         }).collect(Collectors.toList());
 
@@ -761,7 +767,7 @@ public class ManageReviewCommentUI {
                 .filter(reviewComment -> {
                     Integer commitFlag = reviewComment.getCommitFlag();
                     // null(老版本本地的数据)、以及本地有变更的，才会提交
-                    return commitFlag == null || commitFlag == CommitFlag.UNCOMMITED;
+                    return commitFlag == null || commitFlag == Constants.UNCOMMITED;
                 })
                 .map(reviewCommentInfoModel -> {
                     CommentBody comment = new CommentBody();
