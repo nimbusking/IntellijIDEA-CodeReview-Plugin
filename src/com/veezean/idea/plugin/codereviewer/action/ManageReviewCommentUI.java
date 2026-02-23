@@ -1,6 +1,11 @@
 package com.veezean.idea.plugin.codereviewer.action;
 
 import com.alibaba.fastjson.TypeReference;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationGroup;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.LogicalPosition;
@@ -9,8 +14,11 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.StatusBar;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.search.PsiShortNamesCache;
@@ -353,6 +361,9 @@ public class ManageReviewCommentUI {
         this.rightMenu.show(commentTable, evt.getX(), evt.getY());
     }
 
+    /**
+     * 页面交互按钮事件绑定逻辑
+     */
     private void bindButtons() {
         GlobalConfigInfo globalConfig = GlobalConfigManager.getInstance().getGlobalConfig();
 
@@ -393,17 +404,16 @@ public class ManageReviewCommentUI {
                     ProjectLevelService.getService(ManageReviewCommentUI.this.project).getProjectCache()
                             .importComments(reviewCommentInfoModels);
                     CommonUtil.reloadCommentListShow(ManageReviewCommentUI.this.project);
-                    Messages.showMessageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                            LanguageUtil.getString("ALERT_CONTENT_SUCCESS"),
-                            LanguageUtil.getString("ALERT_TITLE_SUCCESS"),
-                            IconCollections.success);
+
+                    NotificationUtil.notificationResult(this.project, "ACTION_DATA_IMPORT", true, "");
                 }
             } catch (Exception ex) {
                 Logger.error("", ex);
-                Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        LanguageUtil.getString("ALERT_CONTENT_FAILED") + System.lineSeparator() + ex.getMessage(),
-                        LanguageUtil.getString(
-                                "ALERT_TITLE_FAILED"));
+                NotificationUtil.notificationResult(this.project, "ACTION_DATA_IMPORT", false, ex.getMessage());
+//                Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
+//                        LanguageUtil.getString("ALERT_CONTENT_FAILED") + System.lineSeparator() + ex.getMessage(),
+//                        LanguageUtil.getString(
+//                                "ALERT_TITLE_FAILED"));
             }
         });
 
@@ -430,15 +440,12 @@ public class ManageReviewCommentUI {
                             ProjectLevelService.getService(ManageReviewCommentUI.this.project)
                                     .getProjectCache()
                                     .getCachedComments());
-                    Messages.showMessageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                            LanguageUtil.getString("ALERT_CONTENT_SUCCESS"),
-                            LanguageUtil.getString("ALERT_TITLE_SUCCESS"),
-                            IconCollections.success);
+                    NotificationUtil.notificationResult(this.project, "ACTION_DATA_EXPORT", true, "");
                     Desktop.getDesktop().open(new File(absoluteParentPath));
                 } catch (Exception ex) {
-                    Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                            LanguageUtil.getString("ALERT_CONTENT_FAILED") + System.lineSeparator() + ex.getMessage(),
-                            LanguageUtil.getString("ALERT_TITLE_FAILED"));
+                    Logger.error("导出失败", ex);
+                    NotificationUtil.notificationResult(this.project, "ACTION_DATA_EXPORT", false, ex.getMessage());
+
                 }
             }
         });
@@ -506,15 +513,10 @@ public class ManageReviewCommentUI {
                                 resetProjectSelectBox(serverProjectShortInfos.getData());
                             });
                 }
-
-                Messages.showMessageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(), LanguageUtil.getString(
-                                "ALERT_CONTENT_SUCCESS"),
-                        LanguageUtil.getString("ALERT_TITLE_SUCCESS"),
-                        IconCollections.success);
+                NotificationUtil.notificationResult(this.project, "ACTION_SYNC_CONFIG", true, "");
             } catch (Exception ex) {
-                Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        LanguageUtil.getString("ALERT_CONTENT_FAILED") + System.lineSeparator() + ex.getMessage(),
-                        LanguageUtil.getString("ALERT_TITLE_FAILED"));
+                Logger.error("同步配置失败", ex);
+                NotificationUtil.notificationResult(this.project, "ACTION_SYNC_CONFIG", false, ex.getMessage());
             }
         });
 
@@ -618,14 +620,9 @@ public class ManageReviewCommentUI {
             }
 
             if (isSuccess.get()) {
-                Messages.showMessageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        LanguageUtil.getString("ALERT_CONTENT_SUCCESS"),
-                        LanguageUtil.getString("ALERT_TITLE_SUCCESS"),
-                        IconCollections.success);
+                NotificationUtil.notificationResult(this.project, "ACTION_UPLOAD_REMOTE", true, "");
             } else {
-                Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        MessageFormat.format(LanguageUtil.getString("COMMIT_DATA_FAILED"), errInfo.toString()),
-                        LanguageUtil.getString("ALERT_TITLE_FAILED"));
+                NotificationUtil.notificationResult(this.project, "ACTION_UPLOAD_REMOTE", false, errInfo.toString());
             }
         });
 
@@ -688,14 +685,9 @@ public class ManageReviewCommentUI {
             }
 
             if (isSuccess.get()) {
-                Messages.showMessageDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        LanguageUtil.getString("ALERT_CONTENT_SUCCESS"),
-                        LanguageUtil.getString("ALERT_TITLE_SUCCESS"),
-                        IconCollections.success);
+                NotificationUtil.notificationResult(this.project, "ACTION_PULL_REMOTE", true, "");
             } else {
-                Messages.showErrorDialog(ManageReviewCommentUI.this.fullPanel.getRootPane(),
-                        LanguageUtil.getString("ALERT_CONTENT_FAILED") + errInfo,
-                        LanguageUtil.getString("ALERT_TITLE_FAILED"));
+                NotificationUtil.notificationResult(this.project, "ACTION_PULL_REMOTE", false, errInfo.toString());
             }
         });
 

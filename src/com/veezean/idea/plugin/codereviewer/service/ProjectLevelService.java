@@ -2,6 +2,8 @@ package com.veezean.idea.plugin.codereviewer.service;
 
 import cn.hutool.cron.CronUtil;
 import cn.hutool.cron.task.Task;
+import com.intellij.notification.NotificationDisplayType;
+import com.intellij.notification.NotificationGroup;
 import com.intellij.openapi.project.Project;
 import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
@@ -22,11 +24,14 @@ public class ProjectLevelService {
 
     private List<String> schedulerIds = Collections.synchronizedList(new ArrayList<>());
 
-    private Project project;
+    /**
+     * 气泡通知<br>
+     * 2020.3之前版本的气泡通知，之后的版本通过在plugin.xml中注册
+     */
+    private NotificationGroup notificationGroup = new NotificationGroup("CodeReviewNotification", NotificationDisplayType.BALLOON, true);
 
     public ProjectLevelService(final Project project) {
-        this.project = project;
-        this.projectCache = new InnerProjectCache(this.project);
+        this.projectCache = new InnerProjectCache(project);
     }
 
     /**
@@ -41,6 +46,10 @@ public class ProjectLevelService {
 
     public InnerProjectCache getProjectCache() {
         return this.projectCache;
+    }
+
+    public NotificationGroup getNotificationGroup() {
+        return this.notificationGroup;
     }
 
     /**
