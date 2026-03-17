@@ -1,8 +1,8 @@
 <idea-plugin>
     <id>com.veezean.idea.plugin.codereviewer</id>
     <name>Code Review Helper</name>
-    <version>4.2.2</version>
-    <vendor email="veezean@hotmail.com" url="https://github.com/veezean/IntellijIDEA-CodeReview-Plugin">Veezean</vendor>
+    <version>5.0.0</version>
+    <vendor email="kemivong@hotmail.com" url="https://github.com/nimbusking/IntellijIDEA-CodeReview-Plugin/tree/branch_new_5.0">nimbusk</vendor>
 
     <description><![CDATA[
     A simple and easy-to-use code review tool on the idea-platform<br>

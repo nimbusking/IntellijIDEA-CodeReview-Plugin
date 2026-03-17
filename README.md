@@ -16,6 +16,7 @@ https://github.com/veezean/IntellijIDEA-CodeReview-Plugin
 - 【新增】补充二开和配置相关文档
 - 【优化】去除原有配置成功通过MsgBox弹框的消息提醒，改为IDEA内置消息提醒
 - 【优化】重构国际化消息提醒设计
+- 【优化】窗口表格着色：拒绝-红色和已解决-绿色
 - 【修复】CodeInsight功能涉及到的本地未提交数据行数标记问题
 
 ---
