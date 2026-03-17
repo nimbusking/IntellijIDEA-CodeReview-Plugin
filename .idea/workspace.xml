@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4cbf23fc-5a3b-450b-b931-262f62457ebc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LBdRkQmMUVBz5dQWjeCcbAnCOq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/plugins/git4idea/lib/git4idea.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\src\com\veezean\idea\plugin\codereviewer\model" />
+      <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\src\com\veezean\idea\plugin\codereviewer\action" />
+      <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\resources" />
+      <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\src\com\veezean\idea\plugin\codereviewer\consts" />
+      <recent name="D:\workspace\03.self_dev\IntellijIDEA-CodeReview-Plugin\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.veezean.idea.plugin.codereviewer.action.element" />
+      <recent name="com.veezean.idea.plugin.codereviewer.action" />
+      <recent name="com.veezean.idea.plugin.codereviewer.action.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Plugin.Plugin">
+    <configuration name="CryptoUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.veezean.idea.plugin.codereviewer.util.CryptoUtil" />
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.veezean.idea.plugin.codereviewer.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatePicker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.veezean.idea.plugin.codereviewer.action.element.DatePicker" />
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.veezean.idea.plugin.codereviewer.action.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalDirUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.veezean.idea.plugin.codereviewer.common.LocalDirUtil" />
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.veezean.idea.plugin.codereviewer.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewFieldConfigUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.veezean.idea.plugin.codereviewer.action.ReviewFieldConfigUI" />
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.veezean.idea.plugin.codereviewer.action.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="IntellijIDEA-CodeReview-Plugin" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LocalDirUtil" />
+        <item itemvalue="Application.DatePicker" />
+        <item itemvalue="Application.CryptoUtil" />
+        <item itemvalue="Application.ReviewFieldConfigUI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cbf23fc-5a3b-450b-b931-262f62457ebc" name="Default Changelist" comment="" />
+      <created>1675348403466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675348403466</updated>
+      <workItem from="1694610536425" duration="2547000" />
+      <workItem from="1694613140169" duration="3505000" />
+      <workItem from="1713271319223" duration="13419000" />
+      <workItem from="1715089405724" duration="30693000" />
+      <workItem from="1716090183216" duration="779000" />
+      <workItem from="1716097127235" duration="9895000" />
+      <workItem from="1716905412685" duration="13555000" />
+      <workItem from="1717245330104" duration="20175000" />
+      <workItem from="1717424014293" duration="10095000" />
+      <workItem from="1719844497496" duration="27000" />
+      <workItem from="1720878423600" duration="22025000" />
+      <workItem from="1721050817462" duration="2769000" />
+      <workItem from="1723809123736" duration="2808000" />
+      <workItem from="1736061415470" duration="874000" />
+      <workItem from="1773728059984" duration="160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="822" y="294" key="CommitChangelistDialog2" timestamp="1773728236859">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="822" y="294" key="CommitChangelistDialog2/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1773728236859" />
+    <state x="963" y="440" key="FileChooserDialogImpl" timestamp="1773728124376">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="963" y="440" key="FileChooserDialogImpl/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1773728124376" />
+    <state x="761" y="274" key="SettingsEditor" timestamp="1773728127030">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="761" y="274" key="SettingsEditor/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1773728127030" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1773728060157">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1392/-3840.0.2560.1392@0.0.2560.1392" timestamp="1773728060157" />
+  </component>
+</project>
