@@ -95,17 +95,17 @@ public class CodeCommentMarker {
 
             // 标识给定的评论意见
             // 这里可能会有数组越界异常，比如原来记录位置是100-110行，结果后来代码修改之后，一共只有80行了，打开的时候此处就会异常，所以catch掉
-            // 修复行数标记存在不正确情况，本地未提交的偏移一行
             int lineStartOffset = 0;
             int lineEndOffset = 0;
-            if (Integer.valueOf(Constants.NOT_CHANGED).equals(commentInfoModel.getCommitFlag())) {
-                lineStartOffset = editor.getDocument().getLineStartOffset(commentInfoModel.getStartLine() - 1);
-                lineEndOffset = editor.getDocument().getLineEndOffset(commentInfoModel.getEndLine() - 1);
-            } else {
-                // 已提交的偏移一行
-                lineStartOffset = editor.getDocument().getLineStartOffset(commentInfoModel.getStartLine());
-                lineEndOffset = editor.getDocument().getLineEndOffset(commentInfoModel.getEndLine());
-            }
+//            if (Integer.valueOf(Constants.NOT_CHANGED).equals(commentInfoModel.getCommitFlag())) {
+//                lineStartOffset = editor.getDocument().getLineStartOffset(commentInfoModel.getStartLine() - 1);
+//                lineEndOffset = editor.getDocument().getLineEndOffset(commentInfoModel.getEndLine() - 1);
+//            } else {
+//
+//            }
+            // 已提交的偏移一行
+            lineStartOffset = editor.getDocument().getLineStartOffset(commentInfoModel.getStartLine());
+            lineEndOffset = editor.getDocument().getLineEndOffset(commentInfoModel.getEndLine());
 
             RangeHighlighter highlighter = editor.getMarkupModel().addRangeHighlighter(lineStartOffset,
                     lineEndOffset, layer,
