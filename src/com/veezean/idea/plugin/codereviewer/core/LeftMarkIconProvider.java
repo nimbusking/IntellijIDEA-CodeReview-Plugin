@@ -1,4 +1,4 @@
-package com.veezean.idea.plugin.codereviewer.action;
+package com.veezean.idea.plugin.codereviewer.core;
 
 import com.intellij.codeInsight.daemon.RelatedItemLineMarkerInfo;
 import com.intellij.codeInsight.daemon.RelatedItemLineMarkerProvider;
@@ -10,7 +10,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiWhiteSpace;
 import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
 import com.veezean.idea.plugin.codereviewer.util.IconCollections;
 import org.jetbrains.annotations.NotNull;

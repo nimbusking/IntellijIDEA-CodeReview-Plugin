@@ -11,7 +11,7 @@ import com.intellij.ui.JBColor;
 import com.veezean.idea.plugin.codereviewer.common.GlobalConfigManager;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
 import com.veezean.idea.plugin.codereviewer.model.ReviewComment;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
 
 import java.util.List;

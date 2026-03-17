@@ -81,11 +81,11 @@
         <!-- 注册代码检视工具的 Tool Window -->
         <toolWindow id="CodeReview"
                     anchor="bottom"
-                    factoryClass="com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentsFactory"/>
+                    factoryClass="com.veezean.idea.plugin.codereviewer.core.ManageReviewCommentsFactory"/>
 
         <codeInsight.lineMarkerProvider
                 language=""
-                implementationClass="com.veezean.idea.plugin.codereviewer.action.LeftMarkIconProvider"/>
+                implementationClass="com.veezean.idea.plugin.codereviewer.core.LeftMarkIconProvider"/>
 
         <!-- 注册 application-level service -->
         <!--    <applicationService-->
@@ -94,7 +94,7 @@
 
         <!-- 注册 project-level service -->
         <projectService
-                serviceImplementation="com.veezean.idea.plugin.codereviewer.service.ProjectLevelService"/>
+                serviceImplementation="com.veezean.idea.plugin.codereviewer.core.ProjectLevelService"/>
     </extensions>
 
     <actions>

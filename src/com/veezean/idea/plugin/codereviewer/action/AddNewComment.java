@@ -13,7 +13,7 @@ import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
 import com.veezean.idea.plugin.codereviewer.model.Column;
 import com.veezean.idea.plugin.codereviewer.model.ReviewComment;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
 import git4idea.GitReference;

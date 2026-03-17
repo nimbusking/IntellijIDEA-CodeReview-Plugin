@@ -7,7 +7,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentUI;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 
 import javax.swing.*;
 import java.awt.*;

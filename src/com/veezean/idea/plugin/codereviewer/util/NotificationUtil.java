@@ -3,7 +3,7 @@ package com.veezean.idea.plugin.codereviewer.util;
 import com.intellij.notification.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 
 import java.text.MessageFormat;
 

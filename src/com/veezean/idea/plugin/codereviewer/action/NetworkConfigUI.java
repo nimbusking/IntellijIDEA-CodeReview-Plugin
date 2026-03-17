@@ -13,7 +13,7 @@ import com.veezean.idea.plugin.codereviewer.common.NetworkOperationHelper;
 import com.veezean.idea.plugin.codereviewer.consts.LanguageType;
 import com.veezean.idea.plugin.codereviewer.consts.RunningType;
 import com.veezean.idea.plugin.codereviewer.model.*;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
 import com.veezean.idea.plugin.codereviewer.util.LanguageUtil;
 import com.veezean.idea.plugin.codereviewer.util.Logger;

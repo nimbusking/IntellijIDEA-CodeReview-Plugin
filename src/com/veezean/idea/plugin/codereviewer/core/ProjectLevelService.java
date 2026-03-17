@@ -1,4 +1,4 @@
-package com.veezean.idea.plugin.codereviewer.service;
+package com.veezean.idea.plugin.codereviewer.core;
 
 import cn.hutool.cron.CronUtil;
 import cn.hutool.cron.task.Task;

@@ -1,11 +1,7 @@
 package com.veezean.idea.plugin.codereviewer.action;
 
 import com.alibaba.fastjson.TypeReference;
-import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationDisplayType;
-import com.intellij.notification.NotificationGroup;
-import com.intellij.notification.Notifications;
-import com.intellij.openapi.application.ApplicationManager;
+import com.google.common.eventbus.EventBus;
 import com.intellij.openapi.editor.CaretModel;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.LogicalPosition;
@@ -14,11 +10,8 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComboBox;
-import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.wm.StatusBar;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.search.PsiShortNamesCache;
@@ -28,9 +21,11 @@ import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.common.NetworkOperationHelper;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
 import com.veezean.idea.plugin.codereviewer.consts.InputTypeDefine;
+import com.veezean.idea.plugin.codereviewer.listener.sync.ReviewCommentSyncEvent;
+import com.veezean.idea.plugin.codereviewer.listener.sync.ReviewCommentSyncListener;
 import com.veezean.idea.plugin.codereviewer.mark.CodeCommentMarker;
 import com.veezean.idea.plugin.codereviewer.model.*;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.*;
 import org.apache.commons.lang.StringUtils;
 
@@ -45,7 +40,6 @@ import java.io.File;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
@@ -548,77 +542,11 @@ public class ManageReviewCommentUI {
                 return;
             }
 
-            // 子线程操作防止界面卡死
             AtomicBoolean isSuccess = new AtomicBoolean(true);
             StringBuffer errInfo = new StringBuffer("");
-            Thread workThread = new Thread(() -> {
-                try {
-                    commitToServerButton.setEnabled(false);
-                    NetworkOperationHelper.doPost("client/comment/commitComments",
-                            commitComment,
-                            new TypeReference<Response<CommitResult>>() {
-                            },
-                            respBody -> {
-                                CommitResult commitResult = respBody.getData();
-                                if (!commitResult.isSuccess()) {
-                                    errInfo.append(commitResult.getErrDesc())
-                                            .append(System.lineSeparator());
-                                    if (commitResult.getFailedIds() != null) {
-                                        errInfo.append(
-                                                commitResult.getFailedIds().stream().collect(Collectors.joining(",",
-                                                        "[", "]"))
-                                        );
-                                    }
-                                    isSuccess.set(false);
-                                }
-
-                                List<ReviewComment> cachedComments =
-                                        ProjectLevelService.getService(ManageReviewCommentUI.this.project)
-                                                .getProjectCache()
-                                                .getCachedComments();
-
-                                // 更新提交完成的状态标识
-                                cachedComments.stream()
-                                        .filter(reviewComment -> commitResult.getFailedIds() != null
-                                                && !commitResult.getFailedIds().contains(reviewComment.getId()))
-                                        .forEach(reviewComment -> {
-                                            // 提交成功的记录，更新状态为已提交
-                                            reviewComment.setCommitFlag(Constants.NOT_CHANGED);
-                                        });
-
-                                Map<String, Long> versionMap = commitResult.getVersionMap();
-                                if (versionMap != null) {
-                                    cachedComments.forEach(reviewComment -> {
-                                        Long version = versionMap.get(reviewComment.getId());
-                                        if (version != null) {
-                                            reviewComment.setDataVersion(version);
-                                        }
-                                    });
-                                }
-
-                                // 写入本地，并刷新表格显示
-                                ProjectLevelService.getService(ManageReviewCommentUI.this.project).getProjectCache()
-                                        .importComments(cachedComments);
-                                CommonUtil.reloadCommentListShow(ManageReviewCommentUI.this.project);
-
-                            }
-                    );
-                } catch (Exception ex) {
-                    Logger.error("上传评审数据失败", ex);
-                    isSuccess.set(false);
-                    errInfo.append(System.lineSeparator()).append(ex.getMessage());
-                } finally {
-                    commitToServerButton.setEnabled(true);
-                }
-            });
-            workThread.start();
-
-            try {
-                workThread.join();
-            } catch (Exception ex) {
-                Logger.error("上传评审数据失败", ex);
-            }
-
+            // 创建事件
+            ReviewCommentSyncEvent reviewCommentSyncEvent = new ReviewCommentSyncEvent(commitToServerButton, commitComment, this.project, isSuccess, errInfo);
+            ProjectLevelService.getService(this.project).getProjectCache().getEventBus().post(reviewCommentSyncEvent);
             if (isSuccess.get()) {
                 NotificationUtil.notificationResult(this.project, "ACTION_UPLOAD_REMOTE", true, "");
             } else {

@@ -1,12 +1,14 @@
 package com.veezean.idea.plugin.codereviewer.common;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.google.common.eventbus.EventBus;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.veezean.idea.plugin.codereviewer.action.ManageReviewCommentUI;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
 import com.veezean.idea.plugin.codereviewer.consts.FileConstants;
 import com.veezean.idea.plugin.codereviewer.consts.InputTypeDefine;
+import com.veezean.idea.plugin.codereviewer.listener.sync.ReviewCommentSyncListener;
 import com.veezean.idea.plugin.codereviewer.model.CodeReviewCommentCache;
 import com.veezean.idea.plugin.codereviewer.model.Column;
 import com.veezean.idea.plugin.codereviewer.model.ReviewComment;
@@ -29,10 +31,18 @@ public class InnerProjectCache {
     private ManageReviewCommentUI manageReviewCommentUI;
     private Project project;
     private VirtualFile currentOpenedEditorFile;
+    /**
+     * 全局事件
+     */
+    private EventBus eventBus = new EventBus();
 
 
     public InnerProjectCache(Project project) {
         this.project = project;
+
+        // 全局事件注册
+        eventBus.register(new ReviewCommentSyncListener());
+
         reloadCacheData();
     }
 
@@ -305,5 +315,9 @@ public class InnerProjectCache {
      */
     synchronized static CodeReviewCommentCache deserialize(Project project) {
         return SerializeUtils.deserialize(FileConstants.CODE_REVIEW_DATA_HOME_NAME, project.getLocationHash() + FileConstants.CODE_REVIEW_DATA_FILE_SUFFIX);
+    }
+
+    public EventBus getEventBus() {
+        return eventBus;
     }
 }

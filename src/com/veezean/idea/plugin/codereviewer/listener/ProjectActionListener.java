@@ -3,7 +3,7 @@ package com.veezean.idea.plugin.codereviewer.listener;
 import cn.hutool.cron.CronUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.Logger;
 import org.jetbrains.annotations.NotNull;
 

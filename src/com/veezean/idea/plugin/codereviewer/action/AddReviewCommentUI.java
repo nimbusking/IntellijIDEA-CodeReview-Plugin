@@ -1,6 +1,7 @@
 package com.veezean.idea.plugin.codereviewer.action;
 
 import cn.hutool.core.util.StrUtil;
+import com.google.common.eventbus.EventBus;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.veezean.idea.plugin.codereviewer.action.element.IElementCreator;
@@ -8,12 +9,12 @@ import com.veezean.idea.plugin.codereviewer.common.GlobalConfigManager;
 import com.veezean.idea.plugin.codereviewer.common.InnerProjectCache;
 import com.veezean.idea.plugin.codereviewer.consts.Constants;
 import com.veezean.idea.plugin.codereviewer.consts.InputTypeDefine;
-import com.veezean.idea.plugin.codereviewer.model.Column;
-import com.veezean.idea.plugin.codereviewer.model.RecordColumns;
-import com.veezean.idea.plugin.codereviewer.model.ReviewComment;
-import com.veezean.idea.plugin.codereviewer.model.ValuePair;
-import com.veezean.idea.plugin.codereviewer.service.ProjectLevelService;
+import com.veezean.idea.plugin.codereviewer.listener.sync.ReviewCommentSyncEvent;
+import com.veezean.idea.plugin.codereviewer.listener.sync.ReviewCommentSyncListener;
+import com.veezean.idea.plugin.codereviewer.model.*;
+import com.veezean.idea.plugin.codereviewer.core.ProjectLevelService;
 import com.veezean.idea.plugin.codereviewer.util.CommonUtil;
+import com.veezean.idea.plugin.codereviewer.util.NotificationUtil;
 import com.veezean.idea.plugin.codereviewer.util.UiPropValueHandler;
 
 import javax.swing.*;
@@ -22,6 +23,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -89,12 +91,57 @@ public class AddReviewCommentUI {
             InnerProjectCache projectCache = ProjectLevelService.getService(project).getProjectCache();
             projectCache.addNewComment(model);
             CommonUtil.reloadCommentListShow(project);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException ex) {
+                // do not
+            }
+            // 发异步事件，直接提交远程
+            CommitComment commitComment = buildCommitCommentData(project);
+            AtomicBoolean isSuccess = new AtomicBoolean(true);
+            StringBuffer errInfo = new StringBuffer("");
+            // 创建事件
+            ReviewCommentSyncEvent reviewCommentSyncEvent = new ReviewCommentSyncEvent(null, commitComment, project, isSuccess, errInfo);
+            ProjectLevelService.getService(project).getProjectCache().getEventBus().post(reviewCommentSyncEvent);
+            if (isSuccess.get()) {
+                NotificationUtil.notificationResult(project, "ACTION_UPLOAD_REMOTE", true, "");
+            } else {
+                NotificationUtil.notificationResult(project, "ACTION_UPLOAD_REMOTE", false, errInfo.toString());
+            }
+
             dialog.dispose();
         });
 
         cancelButton.addActionListener(e -> {
             dialog.dispose();
         });
+    }
+
+    private CommitComment buildCommitCommentData(Project project) {
+        List<CommentBody> comments = generateCommitList(project);
+        CommitComment commitComment = new CommitComment();
+        commitComment.setComments(comments);
+        return commitComment;
+    }
+
+    private List<CommentBody> generateCommitList(Project project) {
+        // 本地内容构造成服务端需要的格式，提交服务端
+        List<ReviewComment> cachedComments = ProjectLevelService.getService(project)
+                .getProjectCache()
+                .getCachedComments();
+        return cachedComments.stream()
+                .filter(reviewComment -> {
+                    Integer commitFlag = reviewComment.getCommitFlag();
+                    // null(老版本本地的数据)、以及本地有变更的，才会提交
+                    return commitFlag == null || commitFlag == Constants.UNCOMMITED;
+                })
+                .map(reviewCommentInfoModel -> {
+                    CommentBody comment = new CommentBody();
+                    comment.convertAndSetValues(reviewCommentInfoModel.getPropValues());
+                    comment.setId(reviewCommentInfoModel.getId());
+                    comment.setDataVersion(reviewCommentInfoModel.getDataVersion());
+                    return comment;
+                }).collect(Collectors.toList());
     }
 
     private StringBuilder propValueValidateErrors(int operateType) {
