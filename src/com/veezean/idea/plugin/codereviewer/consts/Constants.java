@@ -2,6 +2,8 @@ package com.veezean.idea.plugin.codereviewer.consts;
 
 import com.intellij.openapi.util.Key;
 
+import java.awt.*;
+
 /**
  * 常量类
  *
@@ -30,4 +32,13 @@ public class Constants {
      */
     public static final int NOT_CHANGED = 0;
 
+    /**
+     * 单元格前景色-未确认
+     */
+    public static Color COLOR_UNCONFIRMED = new Color(196, 135, 122 );
+
+    /**
+     * 单元格前景色-已修改
+     */
+    public static Color COLOR_EDITED = new Color(33, 198, 70 );
 }
